@@ -1,11 +1,11 @@
-package org.example;
+package org.example.model;
 
 public class Bus {
     private String number;
     private String model;
     private double mileage;
 
-    public Bus(BusBuilder busBuilder) {
+    private Bus(BusBuilder busBuilder) {
         number = busBuilder.number;
         this.model = busBuilder.model;
         this.mileage = busBuilder.mileage;
@@ -50,12 +50,5 @@ public class Bus {
                 ", model='" + model + '\'' +
                 ", mileage=" + mileage +
                 '}';
-    }
-}
-
-class TestBusBuilder {
-    public static void main(String[] args) {
-        Bus bus = new Bus.BusBuilder("B111US777", "Liaz-677M").setMileage(1000).build();
-        System.out.println(bus.toString());
     }
 }
